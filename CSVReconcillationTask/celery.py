@@ -4,12 +4,12 @@ import os
 from celery import Celery
 from django.conf import settings
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CSVReconcillationTask.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "CSVReconcillationTask.settings")
 
-app = Celery('CSVReconcillationTask')
+app = Celery("CSVReconcillationTask")
 app.conf.enable_utc = False
 
-app.config_from_object(settings, namespace='CELERY')
+app.config_from_object(settings, namespace="CELERY")
 
 app.autodiscover_tasks()
 

@@ -21,7 +21,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("reconcillation-task/tunnel", admin.site.urls),
-    path("reconciliation/", include("reconciliation.urls")),
+    path("api/v1/reconciliation/", include("reconciliation.urls")),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -27,9 +27,14 @@ def read_csv(file_upload, model, expected_headers):
 
             actual_headers = csv_reader.fieldnames
             if actual_headers != expected_headers:
-                logger.error("CSV headers do not match the expected headers.", actual_headers=actual_headers,
-                             expected_headers=expected_headers)
-                raise InvalidFileHeaderError("CSV headers do not match the expected headers.")
+                logger.error(
+                    "CSV headers do not match the expected headers.",
+                    actual_headers=actual_headers,
+                    expected_headers=expected_headers,
+                )
+                raise InvalidFileHeaderError(
+                    "CSV headers do not match the expected headers."
+                )
 
             for row in csv_reader:
                 transformed_row = {

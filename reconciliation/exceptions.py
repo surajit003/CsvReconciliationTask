@@ -4,4 +4,3 @@ class FileUploadError(Exception):
 
 class InvalidFileHeaderError(FileUploadError):
     pass
-

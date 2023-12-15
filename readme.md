@@ -46,3 +46,9 @@ Brief project description.
     ```
 
 2. **Accessing the Application:** Access the application via `http://localhost:8000` in a web browser.
+
+3. Endpoints:
+
+    - `/csv-reconciliation/tunnel`: Django admin panel.
+    - `/api/v1/uploads`: FileUpload Endpoint.
+    - `/api/v1/reconciliation-results/<str:source_target_file_pair_id>`: Reconciliation Report.
