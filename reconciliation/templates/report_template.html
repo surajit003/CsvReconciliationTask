@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reconciliation Report</title>
+</head>
+<body>
+    <h1>Reconciliation Report</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Record Identifier</th>
+                <th>Field</th>
+                <th>Source Value</th>
+                <th>Target Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.type }}</td>
+                    <td>{{ result.record_identifier }}</td>
+                    <td>{{ result.field }}</td>
+                    <td>{{ result.source_value }}</td>
+                    <td>{{ result.target_value }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

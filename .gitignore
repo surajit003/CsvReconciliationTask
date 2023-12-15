@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development settings
+*.env
+
+# Site-specific configurations
+db.sqlite3
+*.sqlite3
+
+# Static files directory (assumes manage.py collectstatic is used)
+/static/
+
+# Media files directory
+/media/
+
+# Virtual environment
+venv/
+.env/
+
+# Logs and temporary files
+logs/
+*.log
+*.swp
+*.swo
+*.swn
+*.swnl
+*.pyc
+*.db
+*.cache
+
+# PyCharm specific files
+/.idea/
+*.iml
+*.ipr
+*.iws
+/.vscode/
+
+# User-specific settings
+*.suo
+*.idea/workspace.xml
+*.idea/tasks.xml
+*.idea/dictionaries
+*.idea/vcs.xml
+*.idea/*.iml
+*.idea/modules.xml
+
+# macOS specific files
+.DS_Store
