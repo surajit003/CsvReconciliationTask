@@ -1,12 +1,12 @@
-# Project Name
+# CSV Reconciliation
 
-Brief project description.
+A simple reconciliation app to compare csv and find out the differences.
 
 ## Setup
 
 ### Requirements
 
-- Python (version): Specify the Python version used in the project.
+- Python (version): Python 3.10.0
 - PyCharm: IDE used for development.
 - PostgreSQL: Database system used for this project.
 - pre-commit: Tool for managing and maintaining multi-language pre-commit hooks.
@@ -24,7 +24,7 @@ Brief project description.
 2. **Install Dependencies:** Use `pip` to install project dependencies from `requirements.txt`.
 
     ```bash
-    pip install -r requirements.txt
+    pip install -r requirements/dev.txt
     ```
 
 3. **Database Setup:** Set up a PostgreSQL database and configure settings in Django's `settings.py`.
@@ -52,3 +52,9 @@ Brief project description.
     - `/csv-reconciliation/tunnel`: Django admin panel.
     - `/api/v1/uploads`: FileUpload Endpoint.
     - `/api/v1/reconciliation-results/<str:source_target_file_pair_id>`: Reconciliation Report.
+
+#### Docker
+If you have docker installed, you can run the project using the following command:
+```bash
+docker-compose up --build
+```
