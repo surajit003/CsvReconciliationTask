@@ -15,6 +15,13 @@ logger = structlog.get_logger(__name__)
 def read_csv(
     file_upload: FileUpload, model: Type[Model], expected_headers: list
 ) -> list:
+    """
+    Read CSV file and save data to Source or Target model
+    :param file_upload:
+    :param model:
+    :param expected_headers:
+    :return:
+    """
     errors = []
     try:
         file_to_read = file_upload.file

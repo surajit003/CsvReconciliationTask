@@ -19,6 +19,15 @@ logger = structlog.get_logger(__name__)
 
 @app.task(name="process_file")
 def process_file(file_pair_id: int) -> Optional[int]:
+    """
+    Process uploaded files and reconcile records
+    :param file_pair_id:
+    :return:
+
+    TODO: This function is doing too much. It should be broken down into smaller functions.
+    We could also use a class to encapsulate the logic or use an event based approach to decouple the logic.
+    """
+
     try:
         source_target_file_pair = SourceTargetFilePair.objects.get(id=file_pair_id)
         source_file_upload = source_target_file_pair.source_file

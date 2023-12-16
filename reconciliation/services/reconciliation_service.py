@@ -10,6 +10,11 @@ from reconciliation.models import (
 
 
 def reconcile_records(source_target_file_pair_id: int) -> None:
+    """
+    Reconcile records between source and target files and save results to ReconciliationResults model
+    :param source_target_file_pair_id:
+    :return:
+    """
     source_target_file_pair = SourceTargetFilePair.objects.filter(
         id=source_target_file_pair_id
     ).first()

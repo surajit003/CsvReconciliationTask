@@ -26,7 +26,7 @@ SECRET_KEY = config("SECRET_KEY", default="unsecured_value_update_me")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG_MODE", default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # Bad idea, but it's a test project FixMe
 
 # Application definition
 
@@ -134,7 +134,6 @@ CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_BACKEND = "django-db"
-CELERY_TIMEZONE = "Africa/Nairobi"
 
 # Logging configuration
 LOGGING_CONFIG = None
