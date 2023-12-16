@@ -9,7 +9,7 @@ from reconciliation.models import (
 )
 
 
-def reconcile_records(source_target_file_pair_id):
+def reconcile_records(source_target_file_pair_id: int) -> None:
     source_target_file_pair = SourceTargetFilePair.objects.filter(
         id=source_target_file_pair_id
     ).first()

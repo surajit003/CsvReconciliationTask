@@ -1,4 +1,6 @@
 import json
+from typing import Optional
+
 import structlog
 
 
@@ -16,7 +18,7 @@ logger = structlog.get_logger(__name__)
 
 
 @app.task(name="process_file")
-def process_file(file_pair_id):
+def process_file(file_pair_id: int) -> Optional[int]:
     try:
         source_target_file_pair = SourceTargetFilePair.objects.get(id=file_pair_id)
         source_file_upload = source_target_file_pair.source_file

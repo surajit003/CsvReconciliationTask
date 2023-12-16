@@ -1,14 +1,20 @@
 import csv
+from typing import Type
+
 import structlog
+from django.db.models import Model
 
 from django.utils.dateparse import parse_date
 
+from reconciliation.models import FileUpload
 from reconciliation.services.exceptions import InvalidFileHeaderError
 
 logger = structlog.get_logger(__name__)
 
 
-def read_csv(file_upload, model, expected_headers):
+def read_csv(
+    file_upload: FileUpload, model: Type[Model], expected_headers: list
+) -> list:
     errors = []
     try:
         file_to_read = file_upload.file
