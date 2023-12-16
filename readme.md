@@ -58,3 +58,11 @@ If you have docker installed, you can run the project using the following comman
 ```bash
 docker-compose up --build
 ```
+
+## Testing
+To run the tests, use the following command:
+```bash
+   pytest -v
+```
+Please ensure that you have installed the development dependencies before running the tests.
+and redis server is running on port 6379.

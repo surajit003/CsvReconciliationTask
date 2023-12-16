@@ -1,0 +1,8 @@
+SECRET_KEY='django-insecure-xha)+c8-dy=&=v8($*y$+!z5_7v1g+2k6!*3db)(+4(r&8p$*5'
+DEBUG_MODE=True
+DATABASE_NAME=reconciliation_dev
+DATABASE_USER=postgres
+DATABASE_PASSWORD=postgres
+DATABASE_HOST=db
+DATABASE_PORT=5432
+CELERY_BROKER_URL=redis://redis:6379/0

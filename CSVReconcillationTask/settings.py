@@ -82,7 +82,7 @@ DATABASES = {
         "NAME": config("DATABASE_NAME", default="postgres"),
         "USER": config("DATABASE_USER", default="postgres"),
         "PASSWORD": config("DATABASE_PASSWORD", default="postgres"),
-        "HOST": "db",
+        "HOST": config("DATABASE_HOST", default="localhost"),
         "PORT": config("DATABASE_PORT", default=5432, cast=int),
     }
 }
@@ -129,7 +129,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Celery configuration
-CELERY_BROKER_URL = "redis://redis:6379/0"
+CELERY_BROKER_URL = config("CELERY_BROKER_URL", default="redis://redis:6379/0")
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TASK_SERIALIZER = "json"
