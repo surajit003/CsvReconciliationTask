@@ -1,1 +1,6 @@
 -r base.txt
+celery==5.3.6
+redis==5.0.1
+structlog==23.2.0
+pytest-factoryboy==2.6.0
+
