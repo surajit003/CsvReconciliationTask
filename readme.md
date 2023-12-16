@@ -66,8 +66,8 @@ This repository contains a simple reconciliation app designed to compare CSV fil
 6. Endpoints:
 
    - `/csv-reconciliation/tunnel`: Django admin panel.
-   - `/api/v1/uploads`: FileUpload Endpoint.
-   - `/api/v1/reconciliation-results/<str:source_target_file_pair_id>`: Reconciliation Report.
+   - `/api/v1/reconciliation/uploads`: FileUpload Endpoint.
+   - `/api/v1/reconciliation/reconciliation-results/<str:source_target_file_pair_id>`: Reconciliation Report.
 
 ### Docker
 
