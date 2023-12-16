@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Reconciliation Report</title>
+     <script>
+        function checkResultsAndRefresh() {
+            var results = document.getElementsByClassName("result"); // Assuming the results have a class "result"
+
+            if (results.length === 0) { // Check if results are empty
+                setTimeout(function() {
+                    location.reload(); // Refresh the page after a delay
+                }, 5000); // Refresh after 5 seconds (adjust as needed)
+            }
+        }
+
+        window.onload = checkResultsAndRefresh; // Trigger the check on page load
+    </script>
 </head>
 <body>
     <h1>Reconciliation Report</h1>

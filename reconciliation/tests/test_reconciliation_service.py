@@ -18,7 +18,8 @@ pytestmark = pytest.mark.django_db
 
 def test_reconcile_records_missing_in_target():
     """
-    Test that the reconciliation service correctly identifies records that are missing in the files
+    Test that the reconciliation service correctly
+    identifies records that are missing in the files
     """
     source_data_file_upload = FileUploadFactory()
     target_data_file_upload = FileUploadFactory()

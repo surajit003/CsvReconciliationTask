@@ -3,9 +3,9 @@ import io
 import pytest
 from unittest.mock import MagicMock
 from reconciliation.services.csv_service import read_csv
-from reconciliation.models import FileUpload, SourceData
+from reconciliation.models import SourceData
 from reconciliation.services.exceptions import InvalidFileHeaderError
-from reconciliation.tests.factories import FileUploadFactory, SourceDataFactory
+from reconciliation.tests.factories import FileUploadFactory
 
 pytestmark = pytest.mark.django_db
 
@@ -30,7 +30,8 @@ def test_read_csv_with_correct_headers():
 
 def test_read_csv_with_incorrect_headers():
     """
-    Test that the read_csv function raises an InvalidFileHeaderError when the CSV file has incorrect headers
+    Test that the read_csv function raises an InvalidFileHeaderError when
+    the CSV file has incorrect headers
     """
     file_upload = FileUploadFactory()
     expected_headers = [

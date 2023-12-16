@@ -33,7 +33,7 @@ def upload_files(request):
         "source_form": source_form,
         "target_form": target_form,
     }
-    return render(request, "upload_file.html", context)
+    return render(request, "reconciliation/upload_file.html", context)
 
 
 def get_reconciliation_report(request, source_target_file_pair_id):
@@ -43,6 +43,6 @@ def get_reconciliation_report(request, source_target_file_pair_id):
                 source_target_file_pair__pair_id=source_target_file_pair_id
             ).all()
             context = {"results": results}
-            return render(request, "report_template.html", context)
+            return render(request, "reconciliation/report_template.html", context)
     else:
         return redirect("uploads")
