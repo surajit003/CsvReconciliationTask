@@ -10,10 +10,6 @@ services:
       - ./.docker-env
     volumes:
       - .:/app
-    environment:
-      - PYTHONUNBUFFERED=1
-      - PYTHONDONTWRITEBYTECODE=1
-      - REDIS_HOST=redis://redis:6379/0  # Redis URL for Celery
     depends_on:
       - db
       - redis
@@ -25,10 +21,6 @@ services:
     command: celery -A CSVReconcillationTask.celery worker -l info
     volumes:
       - .:/app
-    environment:
-      - PYTHONUNBUFFERED=1
-      - PYTHONDONTWRITEBYTECODE=1
-      - REDIS_HOST=redis://redis:6379/0  # Redis URL for Celery
     depends_on:
       - redis
 
@@ -36,14 +28,11 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
-
   db:
     image: postgres:latest
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_DB=reconciliation_dev
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    env_file:
+      - ./.docker-env
 volumes:
   postgres_data:

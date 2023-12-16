@@ -40,26 +40,30 @@ This repository contains a simple reconciliation app designed to compare CSV fil
 ## Running the Project
 
 1. **Database Migrations:** Run database migrations with the following command:
+   
+  ```
+   psql -U postgres -c "CREATE DATABASE reconciliation_dev"
+   ```
 
    ```bash
    python manage.py migrate
    ```
 
-2. **Run Django Server:** Start the Django development server:
+3. **Run Django Server:** Start the Django development server:
 
    ```bash
    python manage.py runserver
    ```
 
-3. **Run Celery Worker:** Initiate the Celery worker:
+4. **Run Celery Worker:** Initiate the Celery worker:
 
    ```bash
    celery -A CSVReconcillationTask.celery worker -l info
    ```
 
-4. **Accessing the Application:** Access the application via `http://localhost:8000` in a web browser.
+5. **Accessing the Application:** Access the application via `http://localhost:8000` in a web browser.
 
-5. Endpoints:
+6. Endpoints:
 
    - `/csv-reconciliation/tunnel`: Django admin panel.
    - `/api/v1/uploads`: FileUpload Endpoint.
