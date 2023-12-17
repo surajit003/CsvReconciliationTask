@@ -34,5 +34,9 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.docker-env
+    environment:
+      - POSTGRES_DB=reconciliation_dev
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
 volumes:
   postgres_data:
